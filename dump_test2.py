@@ -67,7 +67,7 @@ for subreddit in subreddits:
                 if post.id not in seen_ids:
                     seen_ids.add(post.id)
 
-                    print(f"Currently on new post {new_count} in {subreddit}\n") #output statement to show progress ofm crawler
+                    print(f"Currently on {submission_set} post {new_count} in {subreddit}\n") #output statement to show progress ofm crawler
                     new_count += 1
 
                     #check text for urls and save if exist
