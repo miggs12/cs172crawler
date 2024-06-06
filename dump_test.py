@@ -14,7 +14,7 @@ reddit = praw.Reddit(
 )
 
 #array to store different subreddits
-subreddits = ["gaming"]
+subreddits = ["esports", "ValorantCompetitive"]
 
 for subreddit in subreddits:
 
@@ -110,7 +110,7 @@ for subreddit in subreddits:
             time.sleep(60)
 
 
-    output_file_path = 'hot_new_posts/' + subreddit + '.json' #output file path
+    output_file_path = subreddit + '.json' #output file path
     with open(output_file_path, 'w', encoding='utf-8') as json_file:
         for chunk in parsed_posts:
             json.dump(chunk, json_file, ensure_ascii=False, indent=2)

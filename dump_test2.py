@@ -8,7 +8,7 @@ import requests
 from bs4 import BeautifulSoup
 import os
 import sys
-import schedule
+#import schedule
 
 #Testing this code so that it stores the data after each post so that when it crashes, not everything is lost
 #also trying to see if i can make it so that running it multiple times will get new uniquen posts
@@ -50,9 +50,9 @@ def find_html_links(text):
 
 #array to store different subreddits
 def crawl_and_store():    
-    subreddits = ["gaming", "wow", "pcmasterrace", "Genshin_Impact", "nintendo", "pokemon"]
+    subreddits = ["Helldivers", "leagueoflegends", "GlobalOffensive"]
     for subreddit in subreddits:
-        output_file_path = f'hot_new_posts/{subreddit}.json'
+        output_file_path = f'mig_{subreddit}.json'
         with open(output_file_path, 'w', encoding='utf-8') as json_file:
             json_file.write('[')
             first_post = True
@@ -117,9 +117,9 @@ def crawl_and_store():
 crawl_and_store()
 
 #scheduler loop
-schedule.every(3).hours.do(crawl_and_store)
+#schedule.every(3).hours.do(crawl_and_store)
 
  #Run scheduler loop
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+#while True:
+ #   schedule.run_pending()
+ #   time.sleep(1)
